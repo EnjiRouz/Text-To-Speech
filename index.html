@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/textToSpeech.js" defer></script>
+
+    <meta charset="UTF-8">
+    <title>Text To Speech using js</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="cmd">
+        <div class="title-bar">Text To Speech Command Prompt</div>
+        <div class="tool-bar">
+            <ul>
+                <li><button id="play-button">Play</button></li>
+                <li><button id="pause-button">Pause</button></li>
+                <li><button id="stop-button">Stop</button></li>
+                <li>
+                    <label for="speed">Speed</label>
+                    <input type="number" name="speed" id="speed" placeholder="1" value="1" min="0.5" max="2.5" step="0.1">
+                </li>
+                <li>
+                    <label><input type="radio" name="speech-language" value="ru-RU" id="ru" checked>ru-RU</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="speech-language" value="en-US" id="en">en-US</label>
+                </li>
+                <li><button id="clear-button">Clear</button></li>
+            </ul>
+        </div>
+        <textarea id="textarea" class="textarea" placeholder="Type something here..."></textarea>
+    </div>
+</div>
+</body>
+</html>
