@@ -19,6 +19,7 @@ let currentCharacter;
 // назначение события на момент, когда речь перестанет проигрываться
 utterance.addEventListener("end",()=>{
     textArea.disabled = false;
+    currentCharacter = null;
 });
 
 // получение символа, который синтезируется в данный момент
@@ -92,6 +93,7 @@ stopButton.addEventListener("click", stopTextToSpeech);
 // изменение скорости речи в режиме реального времени
 speed.addEventListener("input",()=>{
     if(synthesis.paused && synthesis.speaking) return;
+    if (currentCharacter===null) return;
 
     stopTextToSpeech();
     playTextToSpeech(utterance.text.substring(currentCharacter));
