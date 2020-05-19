@@ -1,4 +1,4 @@
-// копределение кнопок
+// определение кнопок
 const playButton = document.getElementById("play-button");
 const pauseButton = document.getElementById("pause-button");
 const stopButton = document.getElementById("stop-button");
@@ -45,7 +45,7 @@ function findVoice(lang) {
  */
 function playTextToSpeech(textToPlay){
 
-    // если проигрывание речи было поставлено на паузу - происходит продожление проигрывания
+    // если проигрывание речи было поставлено на паузу - происходит продолжение проигрывания
     if(synthesis.paused && synthesis.speaking)
         return synthesis.resume();
 
@@ -76,12 +76,12 @@ function pauseTextToSpeech(){
  * Остановка (прекращение) проигрывания синтезированной речи
  */
 function stopTextToSpeech(){
-    // происходит выход из состояния паузы и немедленная остановка
+    // происходит выход из состояния паузы и немедленная остановка речи
     synthesis.resume();
     synthesis.cancel();
 }
 
-// назначений действий на соответствующие кнопки/поля
+// назначение действий на соответствующие кнопки/поля
 playButton.addEventListener("click",()=>{
     playTextToSpeech(textArea.value)
 });
